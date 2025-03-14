@@ -9,17 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        ZStack {
-            Image("background").resizable().ignoresSafeArea()
-            VStack(spacing: 35){
-                Logo()
-                FormBox()
-            }
-            .padding(.all, 20)
-        }
-        
-        
+        FormView()
+//        ZStack {
+//            Image("background").resizable().ignoresSafeArea()
+//            VStack(spacing: 35){
+//                Logo()
+//                FormBox()
+//            }
+//            .padding(.all, 20)
+//        }
     }
 }
 
@@ -56,13 +54,20 @@ struct FormBox: View {
                 SecureField("Password...", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-                Button(action: {print("Hello \(username)")}) {
-                    Text("Sign In")
+            NavigationView() {
+                VStack {
+                    NavigationLink(destination: FormView()) {
+                        Button(action: {}) {
+                            Text("Sign In")
+                        }
+                        .frame(width: 80,height: 40)
+                        .background(Color(Color.blue))
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
                 }
-                .frame(width: 80,height: 40)
-                .background(Color(Color.blue))
-                .foregroundStyle(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            .frame(width: 80,height: 40)
         }
         .padding(.all, 25)
         .background(Color("FormColorCustom"))
