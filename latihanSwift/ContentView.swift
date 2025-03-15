@@ -10,23 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 //        FormView()
-        TabView {
-            Tab("Home", systemImage: "house") {
-                YouTubeView()
-            }
-            Tab("Shorts", systemImage: "video") {
-                YouTubeView()
-            }
-            Tab("Subscription", systemImage: "tray") {
-                YouTubeView()
-            }
-            Tab("Email", systemImage: "envelope") {
-                YouTubeView()
-            }
-            Tab("Explorations", systemImage: "paperplane") {
-                YouTubeView()
-            }
-        }
+        ShopView(datas: DummyDatas())
+//        TabView {
+//            Tab("Home", systemImage: "house") {
+//                YouTubeView()
+//            }
+//            Tab("Shorts", systemImage: "video") {
+//                YouTubeView()
+//            }
+//            Tab("Subscription", systemImage: "tray") {
+//                YouTubeView()
+//            }
+//            Tab("Email", systemImage: "envelope") {
+//                YouTubeView()
+//            }
+//            Tab("Explorations", systemImage: "paperplane") {
+//                YouTubeView()
+//            }
+//        }
         
 //        ZStack {
 //            Image("background").resizable().ignoresSafeArea()
